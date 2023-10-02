@@ -4,7 +4,7 @@ import React, { FormEvent, useState } from 'react'
 
 export default function SearchBar() {
     const [searchPrompt,setSearchPrompt] = useState('');
-    const [isLoading,setIsLoading] = useState(false)
+    const [isLoading,setIsLoading] = useState(false);
     const isValidAmazonProductLink =(url:string)=>{
       try {
         const parsedURL = new URL(url);
