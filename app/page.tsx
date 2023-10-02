@@ -1,4 +1,5 @@
 import React from 'react'
+import './globals.css'
 import Image from 'next/image'
 import SearchBar from '@/Components/SearchBar'
 import HeroCarosuel from '@/Components/HeroCarosuel'
