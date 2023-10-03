@@ -2,6 +2,7 @@
 
 import { EmailContent, EmailProductInfo, NotificationType } from '@/types';
 import nodemailer from 'nodemailer';
+import * as SMTPTransport from "nodemailer/lib/smtp-transport";
 
 const Notification = {
   WELCOME: 'WELCOME',
@@ -74,14 +75,14 @@ export async function generateEmailBody (product:EmailProductInfo, type:Notifica
 }
 
 const transporter = nodemailer.createTransport({
-    pool:true,
-    service:'hotmail',
-    port:2525,
-    auth:{
-        user:process.env.EMAIL_USERNAME,
-        pass:process.env.EMAIL_PASSWORD,
-    },
-    maxConnection:1
+  pool: true,
+  service: 'hotmail',
+  port: 2525,
+  auth: {
+    user: 'javascriptmastery@outlook.com',
+    pass: process.env.EMAIL_PASSWORD,
+  },
+  maxConnections: 1
 })
 
 export const sendEmail = async (emailContent:EmailContent,sendTo:string[]) =>{
