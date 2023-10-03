@@ -58,7 +58,6 @@
     @apply flex flex-col gap-10 px-6 md:px-20 py-24;
   }
 
-  /* PRODUCT DETAILS PAGE STYLES */
   .product-container {
     @apply flex flex-col gap-16 flex-wrap px-6 md:px-20 py-24;
   }
@@ -83,7 +82,6 @@
     @apply flex items-center gap-2 px-3 py-2 bg-white-200 rounded-[27px];
   }
 
-  /* MODAL */
   .dialog-container {
     @apply fixed inset-0 z-10 overflow-y-auto bg-black bg-opacity-60;
   }
@@ -108,7 +106,6 @@
     @apply px-5 py-3 text-white text-base font-semibold border border-secondary bg-secondary rounded-lg mt-8;
   }
 
-  /* NAVBAR */
   .nav {
     @apply flex justify-between items-center px-6 md:px-20 py-4;
   }
@@ -117,12 +114,10 @@
     @apply font-spaceGrotesk text-[21px] text-secondary font-bold;
   }
 
-  /* PRICE INFO */
   .price-info_card {
     @apply flex-1 min-w-[200px] flex flex-col gap-2 border-l-[3px] rounded-10 bg-white-100 px-5 py-4;
   }
 
-  /* PRODUCT CARD */
   .product-card {
     @apply sm:w-[292px] sm:max-w-[292px] w-full flex-1 flex flex-col gap-4 rounded-md;
   }
@@ -139,7 +134,6 @@
     @apply text-secondary text-xl leading-6 font-semibold truncate;
   }
 
-  /* SEARCHBAR INPUT */
   .searchbar-input {
     @apply flex-1 min-w-[200px] w-full p-3 border border-gray-300 rounded-lg shadow-xs text-base text-gray-500 focus:outline-none;
   }
