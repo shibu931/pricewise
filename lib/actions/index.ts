@@ -12,11 +12,8 @@ export async function scrapeAndStoreProduct(productUrl:string){
         connectToDB();
         const scrapedProduct = await scrapeAmazonProduct(productUrl);    
         if(!scrapedProduct) return;
-        console.log("running")
         let product = scrapedProduct;
-        console.log("running2")
         const existingProduct = await Product.findOne({url:scrapedProduct.url})
-        console.log("running3")
         if(existingProduct){
             const updatedPriceHistory:any = [
                 ...existingProduct.priceHistory,
@@ -31,14 +28,12 @@ export async function scrapeAndStoreProduct(productUrl:string){
             }
         }
 
-        console.log("running4")
         const newProduct = await Product.findOneAndUpdate(
             {url:scrapedProduct.url},
             product,
             {upsert:true,new:true}
             )
             revalidatePath(`/products/${newProduct._id}`)
-            console.log("running5")
         } catch (error:any) {
             throw new Error(`Failed to create/update product: ${error.message}`) 
         }
